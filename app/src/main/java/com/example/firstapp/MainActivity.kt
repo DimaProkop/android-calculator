@@ -20,8 +20,10 @@ class MainActivity : AppCompatActivity() {
         diceImageSecond = findViewById(R.id.dice_image_2)
 
         val rollButton: Button = findViewById(R.id.roll_button)
+        val clearButton: Button = findViewById(R.id.clear_button)
 
         rollButton.setOnClickListener { rollDice() }
+        clearButton.setOnClickListener { refreshDices() }
     }
 
     private fun randomNumber(): Int {
@@ -48,5 +50,10 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
+    }
+
+    private fun refreshDices() {
+        diceImageFirst.setImageResource(R.drawable.empty_dice)
+        diceImageSecond.setImageResource(R.drawable.empty_dice)
     }
 }
